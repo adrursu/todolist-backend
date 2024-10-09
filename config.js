@@ -1,8 +1,9 @@
 module.exports = {
     database: {
-        host: 'http://todolistdbau.mysql.database.azure.com', // This matches the name of the MySQL service in Docker Compose
+        host: 'todolistdbau.mysql.database.azure.com', // This matches the name of the MySQL service in Docker Compose
         user: 'todolistadmin',
         password: 'welcome@123',
-        database: 'todo_db'
+        database: 'todo_db',
+        port: 3306
     }
 };
