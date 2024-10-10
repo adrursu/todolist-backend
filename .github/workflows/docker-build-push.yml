@@ -16,3 +16,5 @@ jobs:
     - run: |
         docker build . -t todolistacr.azurecr.io/todolist-backend:${{ github.sha }}
         docker push todolistacr.azurecr.io/todolist-backend:${{ github.sha }}
+        docker push todolistacr.azurecr.io/todolist-backend:latest
+
