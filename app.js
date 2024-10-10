@@ -30,7 +30,7 @@ app.post('/api/todos', (req, res) => {
     const { title, description } = req.body;
     db.query('INSERT INTO todos (title, description) VALUES (?, ?)', [title, description], (err, result) => {
         if (err) throw err;
-        res.json({ message: 'Todo created', id: result.insertId });
+        res.json({ message: 'Item created', id: result.insertId });
     });
 });
 
@@ -39,7 +39,7 @@ app.put('/api/todos/:id', (req, res) => {
     const { id } = req.params;
     db.query('UPDATE todos SET is_completed = 1 WHERE id = ?', [id], (err, result) => {
         if (err) throw err;
-        res.json({ message: 'Todo updated' });
+        res.json({ message: 'Item updated' });
     });
 });
 
@@ -48,7 +48,7 @@ app.delete('/api/todos/:id', (req, res) => {
     const { id } = req.params;
     db.query('DELETE FROM todos WHERE id = ?', [id], (err, result) => {
         if (err) throw err;
-        res.json({ message: 'Todo deleted' });
+        res.json({ message: 'Item deleted' });
     });
 });
 
